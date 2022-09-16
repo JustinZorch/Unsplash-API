@@ -28,13 +28,10 @@ function App() {
       "client_id=" +
       CLIENT_ID;
 
-    console.log(searchUrl);
-
     await fetch(searchUrl)
       .then((res) => res.json())
       .then((data) => {
         setImages(data.results);
-        console.log(data.results);
       });
   };
 
