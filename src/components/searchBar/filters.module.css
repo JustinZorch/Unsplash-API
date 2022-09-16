@@ -1,0 +1,20 @@
+.filters {
+  display: flex;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 60px;
+  width: 600px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  margin-top: 5px;
+  padding: 2px;
+}
