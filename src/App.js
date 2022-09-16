@@ -36,14 +36,12 @@ function App() {
   };
 
   const fullscreenHandler = (title, fullscreen_Url) => {
-    console.log("FS HAndler");
-    console.log(title, fullscreen);
+    console.log("title is as follows", title);
     setFullscreen({
       show: true,
       title: title,
       fullscreen_Url: fullscreen_Url,
     });
-    console.log("fullscreenhandler", fullscreen);
   };
 
   const backHandler = () => {
