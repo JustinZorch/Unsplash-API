@@ -6,10 +6,9 @@ export default function Image(props) {
   return (
     <div className={styles.imageContainer} onClick={props.onFullScreen}>
       <img src={props.src} alt={props.alt}></img>
-      <div>
-        <span className={styles.userName}>
-          <CameraAlt /> {props.userName}
-        </span>
+      <div className={styles.tag}>
+        <CameraAlt />
+        <span className={styles.userName}>{props.userName}</span>
       </div>
     </div>
   );

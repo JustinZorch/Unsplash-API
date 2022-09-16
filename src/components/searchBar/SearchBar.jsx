@@ -6,17 +6,28 @@ import Filters from "./Filters";
 export default function SearchBar(props) {
   const searchRef = useRef();
   const [filters, setFilters] = useState(false);
+  const [filterOptions, setFilterOptions] = useState({
+    images: "10",
+    orderBy: "relevant",
+    color: "none",
+    orientation: "all",
+  });
 
   const filterHandler = () => {
     setFilters(!filters);
   };
 
-  const formSubmitHandler = (event) => {
-    event.preventDefault();
-    props.submitHandler(searchRef.current.value);
+  const updateFilters = (newFilters) => {
+    setFilterOptions(newFilters);
   };
+
+  const searchHandler = (event) => {
+    event.preventDefault();
+    props.onSubmitHandler(searchRef.current.value, filterOptions);
+  };
+
   return (
-    <form className={styles.searchBar} onSubmit={formSubmitHandler}>
+    <form className={styles.searchBar} onSubmit={searchHandler}>
       <div className={styles.search}>
         <label className={styles.searchLabel}>Search</label>
         <input
@@ -24,10 +35,11 @@ export default function SearchBar(props) {
           type="text"
           ref={searchRef}
           placeholder="Netherlands"
+          defaultValue=""
         ></input>
         <Tune className={styles.filters} onClick={filterHandler} />
       </div>
-      {filters && <Filters />}
+      {filters && <Filters updateFilters={updateFilters} />}
       <button type="submit" className={styles.button}>
         Search
       </button>

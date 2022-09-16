@@ -1,0 +1,25 @@
+.imageContainer {
+  cursor: pointer;
+}
+
+.imageContainer:hover {
+  transition: 1s all ease;
+  transform: scale(0.8);
+}
+
+img:hover {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.userName {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  padding: 2px 5px;
+}

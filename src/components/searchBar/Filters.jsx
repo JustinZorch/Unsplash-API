@@ -1,11 +1,20 @@
 import { useRef } from "react";
 import styles from "./filters.module.css";
 
-export default function Filters() {
+export default function Filters(props) {
+  const numOfImagesRef = useRef();
   const orderByRef = useRef();
   const colorRef = useRef();
   const orientationRef = useRef();
-  const numOfImagesRef = useRef();
+
+  const filterHandler = () => {
+    props.updateFilters({
+      images: numOfImagesRef.current.value,
+      orderBy: orderByRef.current.value,
+      color: colorRef.current.value,
+      orientation: orientationRef.current.value,
+    });
+  };
 
   return (
     <div className={styles.filters}>
@@ -18,11 +27,16 @@ export default function Filters() {
           max="30"
           step="5"
           ref={numOfImagesRef}
+          onChange={filterHandler}
         />
       </div>
       <div className="orderBy">
         <label>Order by:</label>
-        <select className={styles.select} ref={orderByRef}>
+        <select
+          className={styles.select}
+          ref={orderByRef}
+          onChange={filterHandler}
+        >
           <option value="relevant" select="selected">
             Relevant
           </option>
@@ -32,7 +46,11 @@ export default function Filters() {
 
       <div className="color">
         <label>Filter by Color:</label>
-        <select className={styles.select} ref={colorRef}>
+        <select
+          className={styles.select}
+          ref={colorRef}
+          onChange={filterHandler}
+        >
           <option value="none" select="selected">
             None
           </option>
@@ -51,7 +69,11 @@ export default function Filters() {
       </div>
       <div className="orientation">
         <label>Orientation:</label>
-        <select className={styles.select} ref={orientationRef}>
+        <select
+          className={styles.select}
+          ref={orientationRef}
+          onChange={filterHandler}
+        >
           <option value="all">All</option>
           <option value="landscape" select="selected">
             Landscape

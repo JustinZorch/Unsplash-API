@@ -1,3 +1,7 @@
+.searchBar {
+  padding: 20px;
+}
+
 .search {
   display: flex;
   align-items: center;
