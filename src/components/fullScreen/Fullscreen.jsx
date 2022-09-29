@@ -1,13 +1,12 @@
 import styles from "./fullscreen.module.css";
 
 export default function Fullscreen(props) {
+  const truncate = (str) => {
+    return str ? str.slice(0, 15) + "..." : "No Title";
+  };
   return (
     <div className={styles.container}>
-      <h2>
-        {props.title.length > 15
-          ? props.title.slice(0, 15) + " ..."
-          : props.title}
-      </h2>
+      <h2>{truncate(props.title)}</h2>
 
       <button className={styles.button} onClick={props.onBack}>
         Back

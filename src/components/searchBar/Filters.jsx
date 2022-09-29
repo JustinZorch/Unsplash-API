@@ -54,17 +54,24 @@ export default function Filters(props) {
           <option value="none" select="selected">
             None
           </option>
+
           <option value="black_and_white">Black and White</option>
-          <option value="black">Black</option>
-          <option value="white">White</option>
-          <option value="yellow">Yellow</option>
-          <option value="orange">Orange</option>
-          <option value="red">Red</option>
-          <option value="purple">Purple</option>
-          <option value="magenta">Magenta</option>
-          <option value="green">Green</option>
-          <option value="teal">Teal</option>
-          <option value="blue">Blue</option>
+          {[
+            "black",
+            "white",
+            "yellow",
+            "orange",
+            "red",
+            "purple",
+            "magenta",
+            "green",
+            "teal",
+            "blue",
+          ].map((item) => (
+            <option value={item}>
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </option>
+          ))}
         </select>
       </div>
       <div className="orientation">
