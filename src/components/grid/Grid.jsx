@@ -4,8 +4,6 @@ import Image from "./Image";
 import styles from "./grid.module.css";
 
 export default function Grid(props) {
-  const fullscreenHandler = (description, fullsScreenUrl) => {};
-
   return (
     <div className={styles.grid}>
       <Masonry columns={5} spacing={1}>
