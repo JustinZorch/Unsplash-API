@@ -54,7 +54,6 @@ export default function Filters(props) {
           <option value="none" select="selected">
             None
           </option>
-
           <option value="black_and_white">Black and White</option>
           {[
             "black",
@@ -81,12 +80,11 @@ export default function Filters(props) {
           ref={orientationRef}
           onChange={filterHandler}
         >
-          <option value="all">All</option>
-          <option value="landscape" select="selected">
-            Landscape
-          </option>
-          <option value="portrait">Portrait</option>
-          <option value="squarish">Squarish</option>
+          {["all", "landscape", "portrait", "squarish"].map((item) => (
+            <option value={item}>
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </option>
+          ))}
         </select>
       </div>
     </div>
