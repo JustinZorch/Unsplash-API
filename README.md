@@ -7,6 +7,6 @@ Image Search App using the Unsplash-API
 
 - Project homepage: https://unsplash-api-sigma.vercel.app/
 
-
-# npm install
-# npm start dev
+# Installing
+ npm install
+ npm start dev
